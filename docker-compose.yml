@@ -6,11 +6,7 @@ services:
       context: .
       dockerfile: php.Dockerfile
 
-    volumes:
-      - sharex:/sharex/files/
 
-    environment:
-      - SECRET=${SHAREXPASS:-password}
     restart: always
 
   web:
@@ -20,7 +16,6 @@ services:
 
     volumes:
       - config:/etc/nginx/conf.d/
-      - sharex:/sharex/files/
       - certs:/etc/letsencrypt/
 
     depends_on:
@@ -83,5 +78,5 @@ volumes:
 
   config:
   certs:
-  sharex:
+
 
