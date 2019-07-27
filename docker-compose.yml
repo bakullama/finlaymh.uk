@@ -1,0 +1,82 @@
+version: "3.7"
+
+services:
+  php:
+    image: sharp6292/mcadesigns-php:${BRANCH:-master}
+    volumes:
+      - sharex:/sharex/files/
+
+    environment:
+      - SECRET=${SHAREXPASS:-password}
+    restart: always
+
+  web:
+    image: sharp6292/mcadesigns-nginx:${BRANCH:-master}
+
+    volumes:
+      - config:/etc/nginx/conf.d/
+      - sharex:/sharex/files/
+      - certs:/etc/letsencrypt/
+
+    depends_on:
+      - hastebin
+
+    ports:
+      - "443:443"
+      - "80:80"
+
+    restart: always
+
+  rdb:
+    hostname: rdb
+    image: rethinkdb:2.3.6
+    volumes:
+      - "rethink_data:/data"
+    entrypoint: rethinkdb -d /data --bind 0.0.0.0 --server-tag default --http-port 28010 --driver-port 28015
+
+    restart: always
+
+  rdb-setup:
+    hostname: rdb-setup
+    image: sharp6292/python-rethink:latest
+
+    depends_on:
+      - rdb
+
+  hastebin:
+    image: sharp6292/hastebin:latest
+    hostname: hastebin
+
+    depends_on:
+      - rdb-setup
+
+    restart: always
+
+  vscode:
+    hostname: vscode
+    image: sharp6292/python-codeserver:latest
+    environment:
+    - PASSWORD=${VSCODEPASS:-password}
+
+    volumes:
+      - "code-data:/code-data"
+      - "extensions:/extensions"
+      - "projects:/home/coder/project"
+      - "home:/home/coder"
+
+    command: code-server -d /code-data -e /extensions
+    restart: always
+    
+volumes:
+  code-data:
+  projects:
+  extensions:
+  home:
+
+  rethink_data:
+  sql_data:
+
+  config:
+  certs:
+  sharex:
+
