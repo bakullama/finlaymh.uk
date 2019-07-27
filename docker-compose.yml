@@ -2,7 +2,10 @@ version: "3.7"
 
 services:
   php:
-    image: sharp6292/mcadesigns-php:${BRANCH:-master}
+    build:
+      context: .
+      dockerfile: php.Dockerfile
+
     volumes:
       - sharex:/sharex/files/
 
@@ -11,7 +14,9 @@ services:
     restart: always
 
   web:
-    image: sharp6292/mcadesigns-nginx:${BRANCH:-master}
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
 
     volumes:
       - config:/etc/nginx/conf.d/
