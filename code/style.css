@@ -1,3 +1,12 @@
+#repos, #gists, #profile{
+  height: 400px;
+  width: 50%;
+  float: left;
+  margin: 1%;
+}
+
+
+
 body, html {
   margin: 0;
   color: #777;
