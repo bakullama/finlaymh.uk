@@ -34,17 +34,17 @@ h4 {
 }
 
 a:visited {
-  color: teal;
+  color: rgb(0, 104, 255);
   text-decoration: none;
 }
 
 a:link {
-  color: teal;
+  color: rgb(0, 104, 255);
   text-decoration: none;
 }
 
 a:hover {
-  color: teal;
+  color: rgb(0, 104, 255);
   text-decoration: none;
 }
 
@@ -60,7 +60,7 @@ a:hover {
 
 .sub {
   background-color: white;
-  color: teal;
+  color: rgb(0, 104, 255);
   border-radius: 5rem;
   margin: 5rem;
 }
@@ -150,18 +150,6 @@ a:hover {
 
 .imagesm {
   display: none
-}
-
-#t1, #t2, #t3, #t4, #t5, #t6, #t7, #t8 {
-  width: 5vw;
-  margin-bottom: 12rem;
-  margin-right: 1vw;
-  margin-left: 1vw;
-  opacity: 0;
-}
-
-#t1:hover, #t2:hover, #t3:hover, #t4:hover, #t5:hover, #t6:hover, #t7:hover, #t8:hover {
-  filter: invert(100%);
 }
 
 .third {
