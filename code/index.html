@@ -17,7 +17,6 @@
   <meta property="og:title" content="Finlay Haggar" />
   <meta property="og:description" content="Finlay's website" />
   <meta property="og:url" content="https://finlaymh.uk" />
-  <meta property="og:image" content="https://mcadesigns.co.uk/logow.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -57,147 +56,20 @@
         <br>
         <br>
 
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <link rel="stylesheet" href="assets/materialize/css/materialize.min.css">
-        <link rel="stylesheet" href="assets/fontawesome-free-5.4.1-web/css/all.css">
-        <script src="assets/js/jquery-3.3.1.min.js"></script>
-        <script src="assets/materialize/js/materialize.min.js"></script>
-
-      <!-- <div class="container">
-            <div class="card-panel grey lighten-4 z-depth-2">
-                <div class="row">
-                    <div class="col s12 m4 l3 xl3">
-                        <p class="center-align">
-                            <img src="images/pfp.png"
-                                alt="avatar"
-                                class="responsive-img circle">
-                        </p>
-                    </div>
-                    <div class="col s12 m8 l9 xl9">
-                        <h1>baku-llama</h1>
-                    </div>
-                </div>
-            </div>
-            <h3>Repositories</h3>
-
-            <div class="row" id="repositories"></div>
-
-            <script type="text/javascript">const SUBJECT = 'baku-llama';
-                const metaData = {};
-                
-                function makeRepoLink (html_url, full_name) {
-                  metaData['RepoLink'] = "<a target='_blank' href='" + html_url + "'><i class='fas fa-code'></i> " + full_name + '</a>';
-                }
-                
-                function makeLicenseLink (license) {
-                  if (license && license.url && license.name) {
-                    metaData['License'] = "<a target='_blank' href='" + license.url + "'><i class='fas fa-key'></i> " + license.name + '</a>';
-                  } else {
-                    metaData['License'] = '';
-                  }
-                }
-                
-                function makeDescription (desc) {
-                  if (desc) {
-                    metaData['Description'] = '<p><strong>' + desc + '</strong></p>';
-                  } else {
-                    metaData['Description'] = '';
-                  }
-                }
-                
-                function makeDateFormat (date) {
-                  let dateObj = new Date(date);
-                  metaData['Date'] = '<p><i class="far fa-clock"></i> Updated: ' + dateObj.toDateString() + '</p>';
-                }
-                
-                function makeHomepage (homepage) {
-                  if (homepage && typeof homepage === "string" && homepage.length > 0) {
-                    let href = "<a style='word-wrap: break-word;' target='_blank' href='" + homepage + "'>" + homepage + '</a>';
-                    metaData['Homepage'] = '<p><i class="fas fa-globe"></i> ' + href + '</p>';
-                  } else {
-                    metaData['Homepage'] = '';
-                  }
-                }
-                
-                function generateTemplate (repo) {
-                  makeHomepage(repo.homepage);
-                  makeDateFormat(repo.updated_at);
-                  makeDateFormat(repo.updated_at);
-                  makeDescription(repo.description);
-                  makeRepoLink(repo.html_url, repo.full_name);
-                  makeLicenseLink(repo.license);
-                
-                  return [
-                    "<div class='col s12 m6 l4 xl4'>",
-                      '<div class="card-panel grey lighten-4 z-depth-4">',
-                        '<div class="row">',
-                          '<div class="col s12 m12 l12 xl12">',
-                            metaData['RepoLink'],
-                            metaData['Description'],
-                            metaData['Homepage'],
-                            metaData['Date'],
-                            metaData['License'],
-                          '</div>',
-                        '</div>',
-                      '</div>',
-                    '</div>',
-                  ].join('');
-                }
-                
-                function loopReposTask (data) {
-                  let i = 0;
-                  let section = [];
-                  data.forEach((repo) => {
-                    if (repo && repo.id) {
-                      if (i % 3 === 0) {
-                        section.push('<div class="row">');
-                      }
-                      let template = generateTemplate(repo);
-                      section.push(template);
-                      if (i % 3 === 2) {
-                        section.push('</div>');
-                        $('#repositories').append(section.join(''));
-                        section = [];
-                      }
-                      i += 1;
-                    }
-                  });
-                  if (i !== 3) {
-                    section.push('</div>')
-                    $('#repositories').append(section.join(''));
-                  }
-                }
-                
-                var getData = (function ($) {
-                  let ReposUrl = `https://api.github.com/users/${SUBJECT}/repos`
-                  $.ajax({
-                    url: ReposUrl,
-                    type: 'GET',
-                    success: function (data) {
-                      loopReposTask(data);
-                    },
-                    error: function (data) {
-                      console.info(data);
-                    }
-                  });
-                })($)
-                
-                </script>
- -->
+ 
   </div>
 </div>
 <div class=bar></div>
 
 <div class="footer">
   <div class=footerimages>
-    <a href="https://discordapp.com/users/149286699187437568"><img class=footeri src="images/discord-logo.png"></a>
-    <a href="mailto:mail@mcadesigns.co.uk"><img class=footeri src="images/mail.png"></a>
+    <a href="mailto:admin@finlaymh.uk"><img class=footeri src="images/mail.png"></a>
     <a href="https://twitter.com/AdamMcArthur5"><img class=footeri src="images/twitter.png"></a>
     <a href="https://c.finlaymh.uk"><img class=footeri src="images/github.svg"></a>
     <a href="https://vs.finlaymh.uk"><img class=footeri src="images/vscode.png"></a>
     <a href="https://p.finlaymh.uk"><img class=footeri src="images/haste.png"></a>
   </div>
-  <p class=notice>Created by McADesigns. Copyright © Adam McArthur</p>
+  
 </div>
 
 <script src="code.js"></script>
